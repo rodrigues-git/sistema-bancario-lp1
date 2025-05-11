@@ -3,7 +3,7 @@
 #include <string>
 
 
-contabancaria::contabancaria(int num, cliente titular, double saldo=0.0) : titular(titular){
+contabancaria::contabancaria(int num, cliente titular, double saldo) : titular(titular){
     this->num = num;
     this->saldo = saldo;
 }
@@ -15,12 +15,14 @@ contabancaria::contabancaria(int num, cliente titular) : titular(titular){
 
 void contabancaria::depositar(double valor){
     saldo += valor;
+    std::cout << "Depositado R$ " << valor << " na conta " << num << std::endl; 
 }
 
 void contabancaria::sacar(double valor){
 
     if(saldo >= valor){
         saldo -= valor;
+        std::cout << "Sacado R$ " << valor << " da conta " << num << std::endl; 
     }
 
     else{
@@ -82,7 +84,6 @@ double contabancaria::getSaldo(){
 void contabancaria::showSaldo(){
     std::cout << "Saldo atual da conta " << num << ": R$ " << saldo << std::endl;
 }
-
 
 void contabancaria::getInfo(){
     std::cout << "Titular: " << titular.getNome() << ", CPF: " << titular.getCpf() << std::endl;
