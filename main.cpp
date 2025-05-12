@@ -2,8 +2,9 @@
 #include <iostream>
 
 int main(){
-    
 
+     std::cout << "\n";
+    
    // Criação dos clientes
     cliente cliente1("Ana", "111.111.111-11");
     cliente cliente2("Bruno", "222.222.222-22");
@@ -28,6 +29,8 @@ int main(){
     conta1.getInfo();
     conta2.getInfo();
     conta3.getInfo();
+
+     std::cout << "\n";
 
     system("Pause");
 
