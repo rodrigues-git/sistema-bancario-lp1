@@ -11,11 +11,24 @@ int main(){
     cliente cliente3("Carla", "333.333.333-33");
 
     // Criação das contas bancárias com saldos iniciais
-    contabancaria conta1(1001, cliente1, 1000.0);
-    contabancaria conta2(1002, cliente2);
-    contabancaria conta3(1003, cliente3);
+    contabancaria conta1(1001, cliente1, 1000.0); // criação de objeto do tipo contabancaria com saldo igual à 1.000,00
+    contabancaria conta2(1002, cliente2); // criação de objeto do tipo contabancaria com saldo igual à 0
+    contabancaria conta3(1003, cliente3); // criação de objeto do tipo contabancaria com saldo igual à 0
 
     // Exibe o saldo inicial da conta de Ana
+    conta1.showSaldo();
+
+    std::cout << "\n";
+
+    // Ana deposita 2.000,00 na conta
+    conta1.depositar(2000.00);
+
+    // Ana saca 500,00 da conta
+    conta1.sacar(500.00);
+
+    std::cout << "\n";
+
+    // Exibição do saldo da conta de Ana após saque e depósito
     conta1.showSaldo();
 
     // Ana transfere R$200 para Bruno
@@ -30,7 +43,7 @@ int main(){
     conta2.getInfo();
     conta3.getInfo();
 
-     std::cout << "\n";
+    std::cout << "\n";
 
     system("Pause");
 
